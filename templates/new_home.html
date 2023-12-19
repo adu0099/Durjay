@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+input[type=submit] {
+  width: 30%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+  
+}
+
+div {
+  border-radius: 5px;
+  background-color: WhiteSmoke;
+  padding: 20px;
+  text-align: center;
+  margin:14px auto;
+  
+  
+
+}
+
+
+h1 {
+  
+  text-align: center;
+  background-color:Teal;
+  width:60%;
+  margin: 0px auto;
+  display: block;
+
+}
+h2 {
+  
+  color: WhiteSmoke;
+}
+
+
+input[type=text] {
+  width: 50%;
+  padding: 8px 5px;
+  margin: 10px 0;
+  box-sizing: border-box;
+
+
+}
+
+body{
+
+  background-color: Teal;
+  background-size: cover;
+}
+select{
+     width:10%;
+
+  }
+
+</style>
+
+
+
+<body> 
+  <h2>Prediction Using Machine Learning Application</h2>
+ <div class="login">
+    <h1>Predict Online Fraud Transaction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+
+    <input type="text" name="step" placeholder="Step" required="required" />
+
+    <br>  
+
+    <label for="Type">Type:</label>
+    <select name="Type" id="Type">
+    <option value="0">CASH_IN</option>
+    <option value="1">CASH_OUT</option>
+    <option value="2">DEBIT</option>
+    <option value="3">PAYMENT</option>
+    <option value="4">TRANSFER</option>
+    </select>
+
+    <br>
+    
+    <input type="text" name="amount" placeholder="Enter the amount of transaction " required="required" />
+    
+    <br>
+    <input type="text" name="OrgID" placeholder="Enter SenderID" required="required" />
+
+    <input type="text" name="oldbalanceOrg" placeholder="Enter Sender Old Balance" required="required" />
+
+    <input type="text" name="newbalanceOrig" placeholder="Enter Sender New Balance" required="required" />
+
+    <input type="text" name="DestID" placeholder="Enter ReciverID" required="required" />
+
+    <input type="text" name="oldbalanceDest" placeholder="Enter Reciver Old Balance" required="required" />
+
+    <input type="text" name="newbalanceDest" placeholder="Enter Reciver New Balance" required="required" />
+
+    <br>
+    <input type="submit" value="Submit">
+    <br>
+    <br>
+    </form>
+ </div>
+</body>
+</html>
